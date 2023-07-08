@@ -3,6 +3,10 @@ body{
     color: white !important;
 }
 
+.icones{
+    width: 30px !important;
+}
+
 :root{
      
     --main-color: #2B2B2B;

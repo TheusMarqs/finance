@@ -1,0 +1,53 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block 'head' %}
+
+    <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
+    <link href="{% static 'extrato/css/view_extrato.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+
+    <div class="container" style="margin-bottom: 50px">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2 text-center">
+            </div>
+            <div class="col-md">
+               <div class="card">
+                    <div style="text-align: center;">
+                        <h2>Total</h2>
+                        <span style="float: left !important;">{{total_valor_gasto}}</span>
+                        <span style="float: right !important;">{{total_planejamento}}</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{porcentagem_total_gasta}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <hr>
+                    <br>
+                    {% for categoria in categorias %}
+                        <p>{{categoria}}</p>
+                        <div>
+                        <span style="float: left !important;">{{categoria.total_gasto}}</span>
+                        <span style="float: right !important;">{{categoria.valor_planejamento}}</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{categoria.calcula_percentual_gasto_por_categoria}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <hr>
+                        <br>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
