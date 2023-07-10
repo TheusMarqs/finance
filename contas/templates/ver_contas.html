@@ -116,6 +116,11 @@
                 <p class="fonte-destaque" style="color: #E96363">Contas próximas do vencimento: {{quant_contas_prox_vencimento}}</p>
                 <p class="fonte-destaque">Contas restantes: {{quant_contas_restantes}}</p>
                 <p class="fonte-destaque" style="color: cyan">Pagas: {{quant_contas_pagas}}</p>
+
+                <a href="{% url 'definir_contas' %}">
+                    <button style="width: 400px; margin-top: 20px;" class="botao-principal">Definir Contas</button>
+                </a>
+            
             </div>
 
         </div>

@@ -61,8 +61,16 @@
                     <input type="radio" name="tipo" value="S"> <label class="negativo">Saída</label>
                     <br>
                     <br>
-                    <input type="submit" style="width:40%;" class="botao-principal">
-
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="col-md-6">
+                            <input type="submit" style="width:50%;" class="botao-principal">
+                        </div>
+                        <div class="col-md-6">
+                        <a href="{% url 'view_extrato' %}">
+                            <button type="button" style="width: 300px" class="botao-principal">Ver Extrato</button>
+                        </a>
+                        </div>
+                    </div>
                 </form>
             </div>
 
